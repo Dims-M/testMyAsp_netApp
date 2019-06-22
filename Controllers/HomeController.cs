@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PartyInvites.Models; // ссылка на папку Model
 
 namespace PartyInvites.Controllers
 {
@@ -44,12 +45,27 @@ namespace PartyInvites.Controllers
         }
 
         /// <summary>
-        /// Форма регистрации
+        /// Форма регистрации перывая пустая форма. Метод get
         /// </summary>
         /// <returns></returns>
+        /// [HttpGet]
         public ActionResult RsvpForm()
         {
             return View();
         }
+
+        /// <summary>
+        /// Перегруженый Метод формы. отправляет данные сведенной формы.
+        /// </summary>
+        /// <param name="guest"></param>
+        /// <returns></returns>
+
+        [HttpPost]
+        public ActionResult RsvpForm(GuestResponse guest)
+        {
+          //  return View("Спасибо. Ваша заявка прнята на расмотрение", guest);
+            return View("Thanks", guest);
+        }
+
     }
 }
