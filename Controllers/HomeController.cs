@@ -9,6 +9,10 @@ namespace PartyInvites.Controllers
     public class HomeController : Controller
     {
         // GET: Home
+        /// <summary>
+        /// Корневая страница
+        /// </summary>
+        /// <returns></returns>
        public ActionResult Index()
         
         {
@@ -37,6 +41,15 @@ namespace PartyInvites.Controllers
 
                 return View();
           //  return "Hello, world!";
+        }
+
+        /// <summary>
+        /// Форма регистрации
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult RsvpForm()
+        {
+            return View();
         }
     }
 }
