@@ -1,0 +1,25 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Базовая страница!!!</title>
+</head>
+<body>
+
+    <div>
+        @ViewBag.Greeting (из представления)
+    </div>
+
+    <div>
+        Салям паполам брат )))  (из представления)
+        <p>Мы собираемся на захватывающую вечеринку. Шашлык машлык обязательно будет</p>
+        @Html.ActionLink("Форма RSVP", "RsvpForm") 
+    </div>
+</body>
+</html>
