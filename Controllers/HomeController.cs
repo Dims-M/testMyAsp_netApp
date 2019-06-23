@@ -60,11 +60,25 @@ namespace PartyInvites.Controllers
         /// <param name="guest"></param>
         /// <returns></returns>
 
+        //[HttpPost]
+        //public ActionResult RsvpForm(GuestResponse guest)
+        //{
+        //  //  return View("Спасибо. Ваша заявка прнята на расмотрение", guest);
+        //    return View("Thanks", guest);
+        //}
+
+        //Проверку на наличие проблемы с достоверностью данных
         [HttpPost]
-        public ActionResult RsvpForm(GuestResponse guest)
+        public ViewResult RsvpForm(GuestResponse guest)
         {
-          //  return View("Спасибо. Ваша заявка прнята на расмотрение", guest);
-            return View("Thanks", guest);
+            if (ModelState.IsValid)
+                // Нужно отправить данные нового гостя по электронной почте 
+                // организатору вечеринки.
+                return View("Thanks", guest);
+
+            else
+                // Обнаружена ошибка проверки достоверности
+                return View();
         }
 
     }
